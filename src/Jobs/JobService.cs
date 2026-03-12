@@ -129,4 +129,14 @@ public class JobScheduler
             new RecurringJobOptions { TimeZone = TimeZoneInfo.Utc }
         );
     }
+
+    public static void RemoveJob(string jobId)
+    {
+        RecurringJob.RemoveIfExists(jobId);
+    }
+
+    public static void TriggerJob(string jobId)
+    {
+        RecurringJob.TriggerJob(jobId);
+    }
 }
